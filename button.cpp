@@ -11,16 +11,16 @@ void Button::setButtonStyle(std::string text, sf::Font &font, const sf::Color &t
     action_id = id;
 }
 
-void Button::click(sf::RenderWindow &window, int &game_state, int &score, sf::Sound &soundtrack, int &ship_id){
+void Button::click(sf::RenderWindow &window, int &game_state, int &score, sf::Sound &soundtrack, int &ship_id, bool &button_pressed){
 
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && !pressed){
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && !button_pressed){
         sf::FloatRect button_bounds = getGlobalBounds();
         if(sf::Mouse::getPosition(window).x >= button_bounds.left &&
             sf::Mouse::getPosition(window).x <= button_bounds.left+button_bounds.width &&
             sf::Mouse::getPosition(window).y >= button_bounds.top &&
             sf::Mouse::getPosition(window).y <= button_bounds.top+button_bounds.height){
 
-            pressed = true;
+            button_pressed = true;
 
             switch(action_id){
 
@@ -55,8 +55,8 @@ void Button::click(sf::RenderWindow &window, int &game_state, int &score, sf::So
         }
     }
 
-    if(!sf::Mouse::isButtonPressed(sf::Mouse::Left) && pressed){
-        pressed = false;
+    if(!sf::Mouse::isButtonPressed(sf::Mouse::Left) && button_pressed){
+        button_pressed = false;
     }
 }
 

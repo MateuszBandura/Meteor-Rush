@@ -80,6 +80,7 @@ int main()
     int ship_id = 0;
     float spawn_cd = 0;
     bool gameover = false;
+    bool button_pressed = false;
 
 
     if (!icon.loadFromFile("rock1.png")) {
@@ -351,12 +352,12 @@ int main()
 
             window.draw(background2);
 
-            start_button.click(window, game_state, score, soundtrack, ship_id);
+            start_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             start_button.setPosition(sf::Vector2f(window.getSize().x/2-start_button.getGlobalBounds().width/2, title.getGlobalBounds().top+title.getGlobalBounds().height-start_button.getGlobalBounds().height/2+100));
             start_button.setString("Start Game");
             window.draw(start_button);
 
-            ship_button.click(window, game_state, score, soundtrack, ship_id);
+            ship_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             ship_button.setPosition(sf::Vector2f(window.getSize().x/2-ship_button.getGlobalBounds().width/2, title.getGlobalBounds().top+title.getGlobalBounds().height-ship_button.getGlobalBounds().height/2+200));
             if(ship_id == 0){
                 ship_button.setString("Change Heavy Ship");
@@ -367,7 +368,7 @@ int main()
 
             window.draw(ship_button);
 
-            quit_button.click(window, game_state, score, soundtrack, ship_id);
+            quit_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             quit_button.setPosition(sf::Vector2f(window.getSize().x/2-quit_button.getGlobalBounds().width/2, title.getGlobalBounds().top+title.getGlobalBounds().height-quit_button.getGlobalBounds().height/2+300));
             window.draw(quit_button);
 
@@ -522,16 +523,16 @@ int main()
             highscore.setString("Highscore: "+h_score);
             window.draw(highscore);
 
-            menu_button.click(window, game_state, score, soundtrack, ship_id);
+            menu_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             menu_button.setPosition(sf::Vector2f(window.getSize().x/2-menu_button.getGlobalBounds().width/2, gameover_text.getGlobalBounds().top+gameover_text.getGlobalBounds().height-menu_button.getGlobalBounds().height/2+300));
             window.draw(menu_button);
 
-            start_button.click(window, game_state, score, soundtrack, ship_id);
+            start_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             start_button.setPosition(sf::Vector2f(menu_button.getGlobalBounds().left-start_button.getGlobalBounds().width-100, gameover_text.getGlobalBounds().top+gameover_text.getGlobalBounds().height-start_button.getGlobalBounds().height/2+300));
             start_button.setString("Replay");
             window.draw(start_button);
 
-            quit_button.click(window, game_state, score, soundtrack, ship_id);
+            quit_button.click(window, game_state, score, soundtrack, ship_id, button_pressed);
             quit_button.setPosition(sf::Vector2f(menu_button.getGlobalBounds().left+menu_button.getGlobalBounds().width+100, gameover_text.getGlobalBounds().top+gameover_text.getGlobalBounds().height-quit_button.getGlobalBounds().height/2+300));
             window.draw(quit_button);
 
