@@ -83,13 +83,13 @@ int main()
     bool button_pressed = false;
 
 
-    if (!icon.loadFromFile("rock1.png")) {
+    if (!icon.loadFromFile("graphics/rock1.png")) {
         std::cerr << "Could not load icon" << std::endl;
         return 4;
     }
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-    if (!font.loadFromFile("font.ttf"))
+    if (!font.loadFromFile("fonts/font.ttf"))
     {
         std::cerr << "Could not load font" << std::endl;
         return 2;
@@ -138,91 +138,91 @@ int main()
 
     ship_button.setButtonStyle("Change Ship", font, sf::Color::White, sf::Color::Black, sf::Vector2f(240, 300), 25, 2, 2);
 
-    if (!g_texture.loadFromFile("galaxy.png")) {
+    if (!g_texture.loadFromFile("graphics/galaxy.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!b1_texture.loadFromFile("background1.png")) {
+    if (!b1_texture.loadFromFile("graphics/background1.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!b2_texture.loadFromFile("background2.png")) {
+    if (!b2_texture.loadFromFile("graphics/background2.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!b3_texture.loadFromFile("background4.png")) {
+    if (!b3_texture.loadFromFile("graphics/background3.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!s_texture.loadFromFile("ship1.png")) {
+    if (!s_texture.loadFromFile("graphics/ship1.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!ss_texture.loadFromFile("ship2.png")) {
+    if (!ss_texture.loadFromFile("graphics/ship2.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!s2_texture.loadFromFile("missile.png")) {
+    if (!s2_texture.loadFromFile("graphics/missile.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!s3_texture.loadFromFile("flame1.png")) {
+    if (!s3_texture.loadFromFile("graphics/flame1.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!ss3_texture.loadFromFile("flame2.png")) {
+    if (!ss3_texture.loadFromFile("graphics/flame2.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!s4_texture.loadFromFile("explosion.png")) {
+    if (!s4_texture.loadFromFile("graphics/explosion.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!s_e_texture.loadFromFile("shipexplosion.png")) {
+    if (!s_e_texture.loadFromFile("graphics/shipexplosion.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!ss_e_texture.loadFromFile("shipexplosion2.png")) {
+    if (!ss_e_texture.loadFromFile("graphics/shipexplosion2.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!r1_texture.loadFromFile("rock1.png")) {
+    if (!r1_texture.loadFromFile("graphics/rock1.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!r2_texture.loadFromFile("rock2.png")) {
+    if (!r2_texture.loadFromFile("graphics/rock2.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!r3_texture.loadFromFile("rock3.png")) {
+    if (!r3_texture.loadFromFile("graphics/rock3.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!r4_texture.loadFromFile("rock4.png")) {
+    if (!r4_texture.loadFromFile("graphics/rock4.png")) {
         std::cerr << "Could not load texture" << std::endl;
         return 1;
     }
-    if (!m_sound.loadFromFile("shootingsound.wav")){
+    if (!m_sound.loadFromFile("sounds/shootingsound.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
-    if (!e_sound.loadFromFile("explosionsound.wav")){
+    if (!e_sound.loadFromFile("sounds/explosionsound.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
-    if (!e2_sound.loadFromFile("shipexplosionsound.wav")){
+    if (!e2_sound.loadFromFile("sounds/shipexplosionsound.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
-    if (!f_sound.loadFromFile("jetsound.wav")){
+    if (!f_sound.loadFromFile("sounds/jetsound.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
-    if (!s_sound.loadFromFile("soundtrack.wav")){
+    if (!s_sound.loadFromFile("sounds/soundtrack.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
-    if (!go_sound.loadFromFile("gameoversound.wav")){
+    if (!go_sound.loadFromFile("sounds/gameoversound.wav")){
         std::cerr << "Could not load sound" << std::endl;
         return 3;
     }
